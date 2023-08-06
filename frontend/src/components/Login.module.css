@@ -1,0 +1,38 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+}
+
+.inputs {
+  font-size: medium;
+  width: 50%;
+  height: 2rem;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid black;
+  outline: none;
+  background-color: white;
+  color:black
+}
+
+.btn {
+  margin: 2rem;
+  border: none;
+  border-radius: 0; /* Remove any border radius that might be applied */
+  border-bottom: 1px solid black; /* Set the underline style and color */
+  outline: none; /* Remove the default focus outline (optional) */
+  background-color: rgba(0, 255, 255, 0.567); /* Set the background color */
+  cursor: pointer; /* Change the cursor to a pointer on hover */
+  padding: 8px 16px; /* Add padding to make the button more visible */
+  color: black; /* Set the text color */
+  width: 52%;
+}
+
+.btn:hover {
+  background-color: rgb(0, 229, 229);
+}

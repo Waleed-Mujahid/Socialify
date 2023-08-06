@@ -1,0 +1,39 @@
+.container {
+  height: 100%;
+  width: 100%;
+  background-color: rgb(0, 0, 0);
+  display: flex;
+  opacity: 0.95;
+
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+}
+
+.logo {
+  width: 60%;
+  height: auto;
+
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  color: black;
+}
+
+.error {
+  color: red;
+  font-size: 1.2rem;
+}
