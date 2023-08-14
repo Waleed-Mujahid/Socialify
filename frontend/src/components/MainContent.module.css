@@ -1,0 +1,65 @@
+.container {
+  height: min-content;
+  width: 100%;
+  position: relative;
+  background-color: white;
+  color: black;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+}
+
+.box {
+  position: relative;
+  display: grid;
+  place-items: center;
+  grid-template-rows: 1fr 1fr 1fr;
+  height: min-content;
+  background-color: white;
+  color: black;
+  padding: 8vh;
+}
+
+.boxHeading {
+  font-size: 4vw;
+  font-family: "Instrument Serif", "Instrument Serif Placeholder", serif;
+}
+
+.boxText {
+  font-size: 1.5vw;
+  width: 50%;
+  color: #555;
+  text-align: center;
+  /* font-family: "Instrument Serif", "Instrument Serif Placeholder", serif; */
+}
+
+.boxButton {
+  font-size: 1.5vw;
+  width: fit-content;
+  color: #FFF;
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.boxButton:hover {
+  background-color: #333;
+  text-decoration: none;
+}
+
+/* .first {
+  flex-shrink: 0;
+  width: 1000px;
+  height: min-content; 
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 60;
+  border-radius: 0px 0px 0px 0px;
+} 
+*/

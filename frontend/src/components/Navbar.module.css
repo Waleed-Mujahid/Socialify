@@ -1,0 +1,73 @@
+/* Navbar.module.css */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1f1f1f;
+  padding: 10px;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+}
+
+.logoLink {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #fff;
+}
+
+.logo {
+  width: 4vw;
+  height: auto;
+  margin-right: 10px;
+}
+
+.logoText {
+  font-size: 3vw;
+  font-family: 'Crimson Pro', 'Courier New', Courier, monospace;
+  /* color: #7cd4f2 */
+  color: #fff;
+}
+
+.navLinks {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.navLinks li {
+  margin-right: 20px;
+}
+
+.navLinks li:last-child {
+  margin-right: 0;
+}
+
+.navLinks a {
+  text-decoration: none;
+  color: #CCCCCC;
+  font-size: 1.5vw;
+}
+
+.userProfile {
+  display: flex;
+  float: left;
+}
+
+.userIcon {
+  width: 4vw;
+  height: auto;
+  border-radius: 50%;
+  margin-left: 20px;
+  margin-right: 20px;
+}

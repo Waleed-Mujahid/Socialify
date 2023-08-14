@@ -1,0 +1,51 @@
+
+.container {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  gap: 3rem;
+  padding: 5rem;
+  background-color: #222;
+  height: fit-content;
+}
+
+.heading {
+  text-align: center;
+  font-size: 2.5vw;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #333;
+  grid-row: 1 / 2;
+  grid-column: 1 / 4;
+  font-style: italic;
+  color: #333;
+  background: linear-gradient(45deg, #ff0033, #00ddff);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover; /* Crop to fit while maintaining aspect ratio */
+  object-position: center center; /* Center the image within the
+  /* max-width: 100%;
+  height: auto; */
+  border-radius: 50px;
+  filter: grayscale(100%);
+}
+
+.name {
+  font-family: "Instrument Serif", "Instrument Serif Placeholder", serif;
+  font-size: 3vw;
+  color: #fff;
+  font-weight: 800;
+  /* text-align: center; */
+}
+
+.bio {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.5vw;
+  color: #ccc;
+  font-style: italic;
+}

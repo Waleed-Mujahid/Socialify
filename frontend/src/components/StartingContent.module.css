@@ -1,0 +1,34 @@
+.container{
+  background-image: url("pictures/person.jpg");
+  background-size: cover;
+  position: sticky;
+  top: 0px;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+  /* opacity: 0.8; */
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: rgba(0,0,0,0.9)
+}
+
+.text {
+  position: absolute;
+  top: 13%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2; /* Place the text on top of the overlay */
+  font-size: 3vw;
+  font-weight: bold;
+  text-align: center;
+  padding: 20px;
+  font-family: 'Libre Baskerville', serif;
+  
+}

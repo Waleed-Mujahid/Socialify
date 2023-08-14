@@ -1,9 +1,10 @@
 .form {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
   width: 80%;
+  height: 100%;
 }
 
 .inputs {

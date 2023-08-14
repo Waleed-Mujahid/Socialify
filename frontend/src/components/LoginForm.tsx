@@ -22,9 +22,10 @@ function LoginForm({ setError, setUsername }: { setError: Function, setUsername:
     );
 
     if (user === undefined) {
-      setError("Incorrect username");
+      setError("User does not exist");
     } else {
       if (passwordRef.current === null) {
+        setError("password not entered.");
         return;
       }
       const match = await bcrypt.compare(
