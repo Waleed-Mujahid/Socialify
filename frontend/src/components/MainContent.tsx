@@ -37,7 +37,6 @@ export default function MainContent() {
       <div className={classes.box}>
         <div className={classes.boxHeading}> Join Socialify </div>
         <div className={classes.boxText}>
-          {" "}
           Don't be shy! It's time to step into the realm where words animate the
           world around you. Join Socialify and embark on a linguistic journey!{" "}
         </div>

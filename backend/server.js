@@ -1,9 +1,14 @@
 const express = require("express");
-const cors = require("cors");
 const mongoose = require("mongoose");
+const cors = require("cors");
 require("dotenv").config();
 
+// Middleware
 const app = express();
+app.use(express.json({ limit: "10mb" })); // Adjust the limit as needed
+app.use(express.urlencoded({ extended: true }));
+app.use(cors());
+
 const port = process.env.PORT || 3000;
 const uri = process.env.URI;
 

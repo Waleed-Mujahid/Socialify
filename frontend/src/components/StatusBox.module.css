@@ -1,0 +1,42 @@
+.statusInput {
+  font-size: 1.2vw;
+  background-color: #333;
+  border-style: none;
+  border-color: Transparent;
+  overflow: auto;
+  resize: none;
+  color: white;
+  width: 90%;
+  padding: 1%;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.statusInput:focus {
+  outline: none;
+}
+
+.userImg {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: 10px;
+  background-color: #333;
+
+}
+
+.statusBox {
+  position: relative;
+  height: fit-content;
+  display: grid;
+  grid-template-columns: 1fr 9fr;
+  place-items: center;
+  width: 70%;
+  margin: 0 auto;
+  border: 1px solid #555;
+  display: flex;
+  justify-content: center;
+  padding: 1%;
+  background-color: #0c0c0c;
+
+}

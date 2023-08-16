@@ -31,7 +31,7 @@
   cursor: pointer; /* Change the cursor to a pointer on hover */
   padding: 8px 16px; /* Add padding to make the button more visible */
   color: black; /* Set the text color */
-  width: 52%;
+  width: fit-content;
 }
 
 .btn:hover {

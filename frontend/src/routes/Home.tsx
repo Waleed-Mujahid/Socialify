@@ -3,17 +3,16 @@ import Navbar from "../components/Navbar";
 import classes from "./Home.module.css";
 import StartingContent from "../components/StartingContent";
 import MainContent from "../components/MainContent";
+import Footer from "../components/Footer";
 
 export default function Home() {
-  const location = useLocation();
-  const userData = location.state; 
-  const username: string = userData ? userData.username : "Anonymous";
 
   return (
     <div className={classes.container}>
-      <Navbar username={username}/>
+      <Navbar />
       <StartingContent />
       <MainContent />
+      <Footer />
     </div>
   )
 }

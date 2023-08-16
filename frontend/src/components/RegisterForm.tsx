@@ -1,7 +1,11 @@
 import classes from "./Login.module.css";
 import { FormEvent } from "react";
+import UserContext from "./UserContext";
+import { useContext } from "react";
 
-function RegisterForm({ setError, setUsername }: { setError: Function, setUsername: Function }) {
+function RegisterForm({ setError }: { setError: Function }) {
+  const userContext = useContext(UserContext);
+
   const handleRegister = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
@@ -21,9 +25,9 @@ function RegisterForm({ setError, setUsername }: { setError: Function, setUserna
         },
         body: JSON.stringify(newUser),
       });
-      if (response.status === 200) {
+      if (response.status === 200 && userContext) {
         setError("none");
-        setUsername(newUser.username);
+        userContext.setUsername(newUser.username);
       } else {
         setError("User not created");
       }

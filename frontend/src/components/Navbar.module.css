@@ -7,7 +7,8 @@
   background-color: #1f1f1f;
   padding: 10px;
   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
-  position: sticky;
+  position: fixed;
+  width: 100%;
   top: 0;
   z-index: 999;
 }
@@ -47,6 +48,10 @@
 
 .navLinks li {
   margin-right: 20px;
+}
+
+.navLinks li:hover {
+  border-bottom: 2px solid white;
 }
 
 .navLinks li:last-child {

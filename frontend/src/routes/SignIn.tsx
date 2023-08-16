@@ -14,15 +14,15 @@ export default function SignIn() {
 
   useEffect(() => {
     if (error === "none") {
-      navigate("/", { state: { username: user } });
+      navigate("/", { state: { user_id: user } });
     }
   }, [error]);
 
   const formComponent =
     path === "/register" ? (
-      <RegisterForm setError={setError} setUsername={setUser} />
+      <RegisterForm setError={setError} />
     ) : (
-      <LoginForm setError={setError} setUsername={setUser} />
+      <LoginForm  setError={setError} />
     );
 
   return (

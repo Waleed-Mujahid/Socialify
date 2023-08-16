@@ -29,6 +29,13 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  scrollbar-face-color: #ff8c00;
+  scrollbar-track-color: #fff8dc;
+  scrollbar-arrow-color: #ffffff;
+  scrollbar-highlight-color: #fff8dc;
+  scrollbar-shadow-color: #d2691e;
+  scrollbar-3dlight-color: #ffebcd;
+  scrollbar-darkshadow-color: #8b0000;
 }
 
 h1 {
@@ -47,9 +54,9 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
-button:hover {
+/* button:hover {
   border-color: #646cff;
-}
+} */
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;

@@ -1,17 +1,20 @@
 import { Link } from "react-router-dom";
 import classes from "./Navbar.module.css";
-import React from 'react';
+import { useContext } from "react";
+import UserContext from "./UserContext";
 
-interface NavbarProps {
-  username: string;
-}
+const Navbar = ( ) => {
+  const userContext = useContext(UserContext);
 
-const Navbar: React.FC<NavbarProps> = ({ username }) => {
   return (
     <nav className={classes.navbar}>
       <div className={classes.logoContainer}>
         <Link to="/" className={classes.logoLink}>
-          <img src="pictures\icon.png" alt="Socialify Logo" className={classes.logo} />
+          <img
+            src="pictures\icon.png"
+            alt="Socialify Logo"
+            className={classes.logo}
+          />
           <span className={classes.logoText}>SOCIALIFY</span>
         </Link>
       </div>
@@ -20,7 +23,7 @@ const Navbar: React.FC<NavbarProps> = ({ username }) => {
           <Link to="/">Home</Link>
         </li>
         <li>
-          <Link to="/">Explore</Link>
+          <Link to='/explore' > Explore </Link>
         </li>
         <li>
           <Link to="/">Notifications</Link>

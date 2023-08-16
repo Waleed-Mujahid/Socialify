@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const postSchema = mongoose.Schema(
+const postSchema = new mongoose.Schema(
   {
     author: {
       type: mongoose.Schema.Types.ObjectId,
@@ -12,17 +12,9 @@ const postSchema = mongoose.Schema(
       required: true,
       trim: true,
     },
-    // likes: {
-    //   type: Number,
-    //   required: true,
-    //   default: 0,
-    // },
-    // comments: [
-    //   {
-    //     type: mongoose.Schema.Types.ObjectId,
-    //     ref: "Comment",
-    //   },
-    // ],
+    image: {
+      type: String, // or Buffer, depending on your use case
+    },
   },
   {
     timestamps: true,

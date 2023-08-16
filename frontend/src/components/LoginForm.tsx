@@ -1,14 +1,23 @@
 import classes from "./Login.module.css";
 import { FormEvent, useRef } from "react";
 import bcrypt from "bcryptjs";
+import UserContext from "./UserContext";
+import { useContext } from "react";
 
 interface User {
+  _id: string;
   username: string;
   email: string;
   password: string;
 }
 
-function LoginForm({ setError, setUsername }: { setError: Function, setUsername: Function }) {
+function LoginForm({ setError }: { setError: Function }) {
+  const userContext = useContext(UserContext); 
+
+  if (!userContext) {
+    return null;
+  }
+
   const usernameRef = useRef<HTMLInputElement>(null);
   const passwordRef = useRef<HTMLInputElement>(null);
 
@@ -33,9 +42,10 @@ function LoginForm({ setError, setUsername }: { setError: Function, setUsername:
         user.password
       );
 
-      if (match) {
+      if (match && userContext) {
         setError("none");
-        setUsername(user.username);
+        userContext.setUserId(user._id);
+        userContext.setUsername(user.username);
       } else {
         setError("Incorrect password");
       }
@@ -64,7 +74,7 @@ function LoginForm({ setError, setUsername }: { setError: Function, setUsername:
         ref={passwordRef}
       />
       <button className={classes.btn} type="submit">
-        Create account
+        Login
       </button>
     </form>
   );

@@ -1,0 +1,23 @@
+.container {
+  width: 100%;
+  /* min-height: 100%; */
+  height: fit-content;
+  display: grid;
+  text-align: center;
+  align-self: start;
+  background-color: black;
+  position: relative;
+  top:20%;
+  background-color: #151515;
+}
+
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #000;
+  width: 100%;
+  height: 100%;
+  opacity: 0.9;
+}
