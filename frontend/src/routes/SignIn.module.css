@@ -4,7 +4,7 @@
   background-color: rgb(0, 0, 0);
   display: flex;
   opacity: 0.95;
-
+  margin: 0;;
 }
 
 .item {
@@ -26,6 +26,13 @@
 .logo {
   width: 60%;
   height: auto;
+}
+
+.img { 
+  height: 15vh;
+  width: auto;
+  position: absolute;
+  top: 5%;
 }
 
 .form {
@@ -82,7 +89,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 30%;
     width: auto;
     background-color: white;
     margin-top: 3rem;
@@ -93,5 +99,6 @@
 @media screen and (min-width: 768px) {
   .logoMobile {
     display: none;
+    height: 0%;
   }
  }

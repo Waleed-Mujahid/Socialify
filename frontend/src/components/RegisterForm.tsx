@@ -1,10 +1,16 @@
 import classes from "./Login.module.css";
 import { FormEvent } from "react";
 import UserContext from "./UserContext";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 function RegisterForm({ setError }: { setError: Function }) {
   const userContext = useContext(UserContext);
+  const nav = useNavigate();
+
+  useEffect(() => {
+    setError("");
+  }, []);
 
   const handleRegister = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -36,10 +42,9 @@ function RegisterForm({ setError }: { setError: Function }) {
     }
   };
 
-
-
   return (
     <form onSubmit={handleRegister} className={classes.form} method="post">
+      <h2 className={classes.heading} >Create an account</h2>
       <input
         className={classes.inputs}
         required
@@ -66,6 +71,13 @@ function RegisterForm({ setError }: { setError: Function }) {
       />
       <button className={classes.btn} type="submit">
         Create account
+      </button>
+      <button
+        onClick={() => nav("/login")}
+        className={classes.btn}
+        type="submit"
+      >
+        Already have an Account
       </button>
     </form>
   );

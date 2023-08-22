@@ -1,0 +1,58 @@
+.container {
+  width: 100%;
+  min-height: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3vh;
+}
+
+.postContainer {
+  width: 70%;
+  text-align: start;
+  border-top: 1px solid #333;
+  border-bottom: 1px solid #333;
+}
+
+.postContainer > * {
+  margin:0;
+  margin-bottom: 2vh;
+}
+
+.postAuthor {
+  font-size: 2rem;
+}
+
+.postBody {
+  text-align: start;
+  font-size: 1rem;
+  color: #ccc;
+  font-style: italic;
+}
+
+.postImage {
+  max-width: 100%; 
+  height: auto;
+  margin: 0;
+}
+
+.btnContainer {
+  display: grid;
+  place-items: center;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5vw;
+}
+
+.btn {
+  width: 100%;
+  font-size: 1rem;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.btn:hover {
+  cursor: pointer;
+  background-color: #333;
+}
+

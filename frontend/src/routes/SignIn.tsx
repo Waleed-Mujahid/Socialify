@@ -28,7 +28,7 @@ export default function SignIn() {
   return (
     <div className={classes.container}>
       <div className={classes.item}>
-        <img className={classes.logo} src="pictures\logo2.png" alt="logo" />
+        <img className={classes.logo} src="pictures\logo.png" alt="logo" />
       </div>
       <div className={classes.item}>
         <div className={classes.formContainer}>
@@ -37,8 +37,7 @@ export default function SignIn() {
             src="pictures\logo.png"
             alt="logo"
           />
-          <img className={classes.img} src="pictures\icon.png" alt="" />
-          <h2>Create an account</h2>
+          <img className={classes.img} src="pictures\favicon-black.png" alt="" />
           {error !== "none" && <h2 className={classes.error}>{error}</h2>}
           <div className={classes.form}>{formComponent}</div>
         </div>

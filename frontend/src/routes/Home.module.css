@@ -1,5 +1,9 @@
-
 .container {
   height: 100%;
   width: 100%;
+  scrollbar-width: none;
+}
+
+.container::-webkit-scrollbar-thumb {
+  display: none;
 }

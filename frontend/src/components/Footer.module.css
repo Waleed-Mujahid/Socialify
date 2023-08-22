@@ -1,8 +1,8 @@
-/* Footer styles */
 .footer {
-  background-color: black;
-  color: white;
-  padding: 20px 0;
+  position: relative;
+  width: 100%;
+  background-color: #000;
+  padding: 10px 0;
   text-align: center;
 }
 

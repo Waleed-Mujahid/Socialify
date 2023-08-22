@@ -9,7 +9,7 @@ interface StatusBoxProps {
 const StatusBox: React.FC<StatusBoxProps> = ({ togglePost, text, setText }) => {
   return (
     <div className={classes.statusBox}>
-      <img className={classes.userImg} src="pictures/default_user.png" alt="" />
+      <img className={classes.userImg} src="pictures/default-user.png" alt="" />
       <input
         className={classes.statusInput}
         type="text"

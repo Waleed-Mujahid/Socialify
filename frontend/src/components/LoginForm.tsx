@@ -2,7 +2,8 @@ import classes from "./Login.module.css";
 import { FormEvent, useRef } from "react";
 import bcrypt from "bcryptjs";
 import UserContext from "./UserContext";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 interface User {
   _id: string;
@@ -13,10 +14,15 @@ interface User {
 
 function LoginForm({ setError }: { setError: Function }) {
   const userContext = useContext(UserContext); 
+  const nav = useNavigate();
 
   if (!userContext) {
     return null;
   }
+
+  useEffect(() => {
+    setError("");
+  }, []);
 
   const usernameRef = useRef<HTMLInputElement>(null);
   const passwordRef = useRef<HTMLInputElement>(null);
@@ -75,6 +81,9 @@ function LoginForm({ setError }: { setError: Function }) {
       />
       <button className={classes.btn} type="submit">
         Login
+      </button>
+      <button onClick = {() => nav('/register')} className={classes.btn} type="submit">
+        Create new Account
       </button>
     </form>
   );

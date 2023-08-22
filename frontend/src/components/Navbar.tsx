@@ -1,17 +1,29 @@
 import { Link } from "react-router-dom";
 import classes from "./Navbar.module.css";
-import { useContext } from "react";
-import UserContext from "./UserContext";
+import { useEffect } from "react";
 
-const Navbar = ( ) => {
-  const userContext = useContext(UserContext);
+const Navbar = ({ setHeight }: { setHeight: Function }) => {
+
+  useEffect(() => {
+    const handleResize = () => {
+      const newNavbarHeight = document.querySelector('nav')?.clientHeight || 0;
+      setHeight(newNavbarHeight);
+    };
+
+    handleResize(); // Initial call
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   return (
     <nav className={classes.navbar}>
       <div className={classes.logoContainer}>
         <Link to="/" className={classes.logoLink}>
           <img
-            src="pictures\icon.png"
+            src="pictures\favicon-white.png"
             alt="Socialify Logo"
             className={classes.logo}
           />
@@ -34,7 +46,7 @@ const Navbar = ( ) => {
       </ul>
       <div className={classes.userProfile}>
         <img
-          src="pictures\default_user.png"
+          src="pictures\default-user.png"
           alt="User Profile"
           className={classes.userIcon}
         />

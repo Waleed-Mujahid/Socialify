@@ -26,7 +26,6 @@ const AddPost: FunctionComponent<IProps> = (props: IProps) => {
   const cancelHandler = () => {
     props.setPost(false);
     props.setText("");
-    document.body.style.overflow = "auto"; // Restore scrolling
   };
 
   const clearSelectedImage = () => {
@@ -57,7 +56,7 @@ const AddPost: FunctionComponent<IProps> = (props: IProps) => {
         const data = await response.json();
         console.log(data);
         props.setPost(false);
-        document.body.style.overflow = "auto"; // Restore scrolling
+        props.setText("");
       } else {
         throw new Error("Something went wrong");
       }

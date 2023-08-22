@@ -7,7 +7,7 @@ export default function UserStory() {
     <div className={classes.container}>
       <StoryBox />
       <StoryBox />
-      <StoryBox />
+    <StoryBox />
     </div>
   );
 }
