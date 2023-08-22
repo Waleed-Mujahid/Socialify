@@ -1,0 +1,24 @@
+.container {
+  background-color: white;
+  box-sizing: border-box;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  min-width: 20vh;
+}
+
+.btn {
+  background-color: white;
+  color:black;
+  font-family: 'Libre Baskerville', serif;
+  width: 100%;
+  transition: background-color 0.1s ease-in-out;
+}
+
+.btn:hover {
+  background-color: #000;
+  color: white;
+}
