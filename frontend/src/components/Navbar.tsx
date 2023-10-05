@@ -22,11 +22,14 @@ const Navbar = ({ setHeight }: { setHeight: Function }) => {
     };
   }, []);
 
-  const toggleShowOptions = () => {
+  const showOptions = () => {
     if (!optionsRef.current) return;
-    if (optionsRef.current.style.display === "none")
-      optionsRef.current.style.display = "block";
-    else optionsRef.current.style.display = "none";
+    optionsRef.current.style.display = "block";
+  };
+
+  const hideOptions = () => {
+    if (!optionsRef.current) return;
+    optionsRef.current.style.display = "none";
   };
 
   return (
@@ -56,23 +59,22 @@ const Navbar = ({ setHeight }: { setHeight: Function }) => {
             <Link to="/">Messages</Link>
           </li>
         </ul>
-        <div className={classes.userProfile}>
-          <img
-            src="pictures\default-user.png"
-            alt="User Profile"
-            className={classes.userIcon}
-            onMouseEnter={toggleShowOptions}
-            onMouseLeave={() => setTimeout(toggleShowOptions,200)}
-          />
+        <div onMouseLeave={hideOptions} onMouseEnter={showOptions} className={classes.userProfile}>
+          <div onMouseDown={showOptions} >
+            <img
+              src="pictures\default-user.png"
+              alt="User Profile"
+              className={classes.userIcon}
+            />
+          </div>
+          <div
+            ref={optionsRef}
+            className={classes.userOptionsContainer}
+          >
+            <UserOptions />
+          </div>
         </div>
       </nav>
-      <div
-        onMouseLeave={toggleShowOptions}
-        ref={optionsRef}
-        className={classes.userOptionsContainer}
-      >
-        <UserOptions />
-      </div>
     </>
   );
 };

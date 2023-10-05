@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import classes from "./AddPost.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCamera, faTimes } from "@fortawesome/free-solid-svg-icons";
-import { Dispatch, SetStateAction, FunctionComponent, useContext } from "react";
-import UserContext from "./UserContext";
+import { Dispatch, SetStateAction, FunctionComponent } from "react";
 
 interface IProps {
   setPost: Dispatch<SetStateAction<boolean>>;
@@ -14,8 +13,6 @@ interface IProps {
 const AddPost: FunctionComponent<IProps> = (props: IProps) => {
   const [selectedImage, setSelectedImage] = useState<File | null>(null);
   const [error, setError] = useState("");
-
-  const userContext = useContext(UserContext);
 
   const handleImageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.files && event.target.files.length > 0) {
@@ -37,11 +34,11 @@ const AddPost: FunctionComponent<IProps> = (props: IProps) => {
     const postText = (event.target as any).postText.value;
 
     try {
-      const base64Image = await convertBase64(selectedImage!);
+      const image = (!!selectedImage) ? await convertBase64(selectedImage!) : null;
       const post = {
-        author: userContext?.userId,
+        author: localStorage.getItem("userId"),
         postText: postText,
-        image: base64Image,
+        image: image,
       };
 
       const response = await fetch("http://127.0.0.1:3000/posts/add", {

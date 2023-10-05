@@ -6,7 +6,6 @@ import RegisterForm from "../components/RegisterForm";
 
 export default function SignIn() {
   const [error, setError] = useState("");
-  const [user, setUser] = useState("Anonymous");
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -14,7 +13,7 @@ export default function SignIn() {
 
   useEffect(() => {
     if (error === "none") {
-      navigate("/", { state: { user_id: user } });
+      navigate("/");
     }
   }, [error]);
 

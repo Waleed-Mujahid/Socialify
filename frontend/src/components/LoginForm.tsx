@@ -1,8 +1,8 @@
 import classes from "./Login.module.css";
 import { FormEvent, useRef } from "react";
 import bcrypt from "bcryptjs";
-import UserContext from "./UserContext";
-import { useContext, useEffect } from "react";
+// import UserContext from "./UserContext";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 interface User {
@@ -13,12 +13,8 @@ interface User {
 }
 
 function LoginForm({ setError }: { setError: Function }) {
-  const userContext = useContext(UserContext); 
+  // const userContext = useContext(UserContext); 
   const nav = useNavigate();
-
-  if (!userContext) {
-    return null;
-  }
 
   useEffect(() => {
     setError("");
@@ -48,10 +44,10 @@ function LoginForm({ setError }: { setError: Function }) {
         user.password
       );
 
-      if (match && userContext) {
+      if (match) {
         setError("none");
-        userContext.setUserId(user._id);
-        userContext.setUsername(user.username);
+        localStorage.setItem("userId", user._id);
+        localStorage.setItem("username", user.username);
       } else {
         setError("Incorrect password");
       }

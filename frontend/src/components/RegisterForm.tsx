@@ -1,11 +1,9 @@
 import classes from "./Login.module.css";
 import { FormEvent } from "react";
-import UserContext from "./UserContext";
-import { useContext, useEffect } from "react";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 function RegisterForm({ setError }: { setError: Function }) {
-  const userContext = useContext(UserContext);
   const nav = useNavigate();
 
   useEffect(() => {
@@ -31,9 +29,9 @@ function RegisterForm({ setError }: { setError: Function }) {
         },
         body: JSON.stringify(newUser),
       });
-      if (response.status === 200 && userContext) {
+      if (response.status === 200) {
         setError("none");
-        userContext.setUsername(newUser.username);
+        localStorage.setItem("username", newUser.username);
       } else {
         setError("User not created");
       }

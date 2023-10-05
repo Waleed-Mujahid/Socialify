@@ -3,8 +3,7 @@ import AddPost from "./AddPost";
 import StatusBox from "./StatusBox";
 import classes from "./Timeline.module.css";
 import ShowPosts from "./ShowPosts";
-import UserContext from "./UserContext";
-import { useContext, useEffect } from "react";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 interface props {
@@ -12,7 +11,6 @@ interface props {
 }
 
 export default function Timeline({ parentRef }: props) {
-  const userContext = useContext(UserContext);
   const [isPosting, setIsPosting] = useState<boolean>(false);
   const [text, setText] = useState<string>("");
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
@@ -21,17 +19,23 @@ export default function Timeline({ parentRef }: props) {
   const containerRef = useRef<HTMLDivElement>(null);
 
   const togglePost = (): void => {
-    if (!(userContext?.username === "")) setIsLoggedIn(true);
+    if (!(localStorage.getItem("username") === "")) setIsLoggedIn(true);
     setIsPosting((prevPost) => !prevPost);
   };
 
   const fetchPosts = async () => {
-    const response = await fetch("http://localhost:3000/posts");
-    const data = await response.json();
-    setPosts(data);
+    try {
+      const response = await fetch("http://localhost:3000/posts");
+      const data = await response.json();
+      setPosts(data);
+    } catch (error) {
+      // Handle error
+    }
   };
 
-  fetchPosts();
+  useEffect(() => {
+    fetchPosts();
+  }, [isPosting]);
 
   useEffect(() => {
     if (isPosting) parentRef.current!.style.overflow = "hidden";
@@ -59,19 +63,23 @@ export default function Timeline({ parentRef }: props) {
   );
 }
 
-const AskLogin = ({togglePost}: {togglePost: Function}) => {
+const AskLogin = ({ togglePost }: { togglePost: Function }) => {
   const nav = useNavigate();
 
   const showLogin = () => {
-    nav('/login');
-  }
+    nav("/login");
+  };
 
   return (
     <div className={classes.askLogin}>
       <h2>You must be signed in to post.</h2>
       <div className={classes.btnContainer}>
-        <button onClick = {showLogin} className={classes.btn}>Sign in</button>
-        <button onClick = {() => togglePost()} className={classes.btn}>Go back</button>
+        <button onClick={showLogin} className={classes.btn}>
+          Sign in
+        </button>
+        <button onClick={() => togglePost()} className={classes.btn}>
+          Go back
+        </button>
       </div>
     </div>
   );
